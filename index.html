@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<style>
+  .flip-card {
+    perspective: 1000px;
+  }
+  .flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+  }
+  .flip-card:hover .flip-inner {
+    transform: rotateY(180deg);
+  }
+  .flip-front, .flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    top: 0;
+    left: 0;
+    border-radius: 0.5rem; /* rounded */
+  }
+  .flip-back {
+    transform: rotateY(180deg);
+  }
+  
+</style>
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PIC</title>
+  <link rel="icon" href="imagens/logo.webp" type="logo/webp">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+</head>
+<body class="bg-gray-100 text-gray-900">
+  <body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100">
+
+
+<nav class="bg-[#445525]/80 text-white p-4 fixed w-full top-0 shadow-md z-50">
+  <div class="container mx-auto flex justify-between items-center">
+
+    <!-- Logo -->
+    <a href="#home" class="text-2xl font-light">Forest Fire Detection</a>
+
+    <!-- Botão Mobile -->
+    <button id="menu-button" class="md:hidden text-white text-2xl focus:outline-none">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Menu Links -->
+    <ul id="menu" class="hidden md:flex md:space-x-4 flex-col md:flex-row bg-[#445525] md:bg-transparent absolute md:static top-16 left-0 w-full md:w-auto">
+
+      <li>
+        <a href="#about" class="hover:shadow flex items-center space-x-1 p-4 md:p-0">
+          <i class="fas fa-info-circle"></i>
+          <span>ABOUT</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="#team" class="hover:shadow flex items-center space-x-1 p-4 md:p-0">
+          <i class="fas fa-users"></i>
+          <span>TEAM</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="#project-video" class="hover:shadow flex items-center space-x-1 p-4 md:p-0">
+          <i class="fas fa-video"></i>
+          <span>VIDEO</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="#blog" class="hover:shadow flex items-center space-x-1 p-4 md:p-0">
+          <i class="fas fa-blog"></i>
+          <span>BLOG</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="#partners" class="hover:shadow flex items-center space-x-1 p-4 md:p-0">
+          <i class="fas fa-handshake"></i>
+          <span>PARTNERS</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="#contacts" class="hover:shadow flex items-center space-x-1 p-4 md:p-0">
+          <i class="fas fa-envelope"></i>
+          <span>CONTACT US</span>
+        </a>
+      </li>
+
+    </ul>
+
+  </div>
+</nav>
+
+<script>
+  const menuButton = document.getElementById('menu-button');
+  const menu = document.getElementById('menu');
+
+  menuButton.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+</script>
+
+  
+
+  <!-- LANDING PAGE -->
+<header id="home" class="relative w-full h-screen bg-cover bg-center rounded-2xl overflow-hidden" style="background-image: url('imagens/capa.jpeg');">
+    <div class="absolute inset-0 flex flex-col items-center justify-center">
+      <h1 class="text-white text-5xl md:text-7xl font-light mb-4 text-center" style="text-shadow: -2px -2px 2px #445525">Forest Fire Detection</h1>
+      <p class="text-white text-lg md:text-2xl text-center max-w-2xl" style="text-shadow: -2px -2px 2px #445525">????????</p>
+    </div>
+  </header>
+
+  
+<!-- Conteúdo Principal -->
+ <main class="container mx-auto px-4 pt-24 pb-8">
+
+<section id="about" class="py-12 bg-gray-100">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl font-light mb-8 text-center" style="text-shadow:-2px -2px 2px #445525">ABOUT OUR PROJECT</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+      <!-- Card 1 -->
+      <div class="w-full h-80">
+        <div class="hidden md:block flip-card w-full h-full">
+          <div class="flip-inner">
+            <!-- Front -->
+            <div class="flip-front p-6 bg-white shadow-md rounded text-center flex flex-col justify-center items-center">
+              <div class="mb-4 text-[#445525] text-4xl">
+                <i class="fas fa-bullseye"></i>
+              </div>
+              <h3 class="text-2xl font-light mb-2">OUR MISSION</h3>
+            </div>
+            <!-- Back -->
+            <div class="flip-back p-6 bg-[#445525] text-white shadow-md rounded text-center flex flex-col justify-center items-center overflow-y-auto">
+              <h3 class="text-2xl font-light mb-2">OUR MISSION</h3>
+              <p class="text-sm">
+                Providing armed forces and tactical intervention teams help with surrounding sound awareness, preventing casualties caused by hard-to-process sounds in hostile conditions through an acoustic situational awareness device.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Mobile static -->
+        <div class="block md:hidden p-6 bg-[#445525] text-white shadow-md rounded text-center flex flex-col justify-center items-center overflow-y-auto h-full">
+          <div class="mb-4 text-4xl">
+            <i class="fas fa-bullseye"></i>
+          </div>
+          <h3 class="text-2xl font-light mb-2">OUR MISSION</h3>
+          <p class="text-sm">
+            Providing armed forces and tactical intervention teams help with surrounding sound awareness, preventing casualties caused by hard-to-process sounds in hostile conditions through an acoustic situational awareness device.
+          </p>
+        </div>
+      </div>
+
+      <!-- Repetir a mesma estrutura para os outros cards -->
+
+      <!-- Card 2 -->
+      <div class="w-full h-80">
+        <div class="hidden md:block flip-card w-full h-full">
+          <div class="flip-inner">
+            <div class="flip-front p-6 bg-white shadow-md rounded text-center flex flex-col justify-center items-center">
+              <div class="mb-4 text-[#445525] text-4xl">
+                <i class="fas fa-lightbulb"></i>
+              </div>
+              <h3 class="text-2xl font-light mb-2">TECHNOLOGICAL SOLUTION</h3>
+            </div>
+            <div class="flip-back p-6 bg-[#445525] text-white shadow-md rounded text-center flex flex-col justify-center items-center overflow-y-auto">
+              <h3 class="text-2xl font-light mb-2">TECHNOLOGICAL SOLUTION</h3>
+              <p class="text-sm">
+                Using concepts from electronics, signal processing, telecommunications, algorithms, software development, and machine learning to detect, analyze, and relay the direction of incoming gunfire to military personnel.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="block md:hidden p-6 bg-[#445525] text-white shadow-md rounded text-center flex flex-col justify-center items-center overflow-y-auto h-full">
+          <div class="mb-4 text-4xl">
+            <i class="fas fa-lightbulb"></i>
+          </div>
+          <h3 class="text-2xl font-light mb-2">TECHNOLOGICAL SOLUTION</h3>
+          <p class="text-sm">
+            Using concepts from electronics, signal processing, telecommunications, algorithms, software development, and machine learning to detect, analyze, and relay the direction of incoming gunfire to military personnel.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="w-full h-80">
+        <div class="hidden md:block flip-card w-full h-full">
+          <div class="flip-inner">
+            <div class="flip-front p-6 bg-white shadow-md rounded text-center flex flex-col justify-center items-center">
+              <div class="mb-4 text-[#445525] text-4xl">
+                <i class="fas fa-users"></i>
+              </div>
+              <h3 class="text-2xl font-light mb-2">SOLUTION BENEFICIARIES</h3>
+            </div>
+            <div class="flip-back p-6 bg-[#445525] text-white shadow-md rounded text-center flex flex-col justify-center items-center overflow-y-auto">
+              <h3 class="text-2xl font-light mb-2">SOLUTION BENEFICIARIES</h3>
+              <p class="text-sm">
+                Primarily for military personnel, but useful for any tactical team facing gun-violence threats, including police, secret services, and private security forces.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="block md:hidden p-6 bg-[#445525] text-white shadow-md rounded text-center flex flex-col justify-center items-center overflow-y-auto h-full">
+          <div class="mb-4 text-4xl">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3 class="text-2xl font-light mb-2">SOLUTION BENEFICIARIES</h3>
+          <p class="text-sm">
+            Primarily for military personnel, but useful for any tactical team facing gun-violence threats, including police, secret services, and private security forces.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="w-full h-80">
+        <div class="hidden md:block flip-card w-full h-full">
+          <div class="flip-inner">
+            <div class="flip-front p-6 bg-white shadow-md rounded text-center flex flex-col justify-center items-center">
+              <div class="mb-4 text-[#445525] text-4xl">
+                <i class="fas fa-list"></i>
+              </div>
+              <h3 class="text-2xl font-light mb-2">MAIN FEATURES</h3>
+            </div>
+            <div class="flip-back p-6 bg-[#445525] text-white shadow-md rounded text-center flex flex-col justify-center items-center overflow-y-auto">
+              <h3 class="text-2xl font-light mb-2">MAIN FEATURES</h3>
+              <p class="text-sm">
+                Combines industry-driven challenges, interdisciplinary collaboration, and expert mentorship, bridging the gap between technological development logistics and engineering skills through project-based learning and rigorous testing.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="block md:hidden p-6 bg-[#445525] text-white shadow-md rounded text-center flex flex-col justify-center items-center overflow-y-auto h-full">
+          <div class="mb-4 text-4xl">
+            <i class="fas fa-list"></i>
+          </div>
+          <h3 class="text-2xl font-light mb-2">MAIN FEATURES</h3>
+          <p class="text-sm">
+            Combines industry-driven challenges, interdisciplinary collaboration, and expert mentorship, bridging the gap between technological development logistics and engineering skills through project-based learning and rigorous testing.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<section id="project-video" class="mb-16">
+  <h2 class="text-4xl font-light mb-8 text-center" style="text-shadow:-2px -2px 2px #445525">GET TO KNOW OUR PROJECT</h2>
+  <div class="w-full bg-black flex justify-center items-center">
+    <video class="w-full max-w-5xl h-auto" autoplay muted loop playsinline>
+      <source src="imagens/intro.mp4" type="video/mp4">
+    </video>
+  </div>
+
+</section>
+<!-- Seção: A Equipa -->
+<section id="team" class="mb-16">
+  <h2 class="text-4xl font-light mb-8 text-center" style="text-shadow:-2px -2px 2px #445525">MEET THE TEAM</h2>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+    
+    <!-- Carolina Rodrigues -->
+    <div class="card bg-white rounded-lg shadow-lg p-6 flex flex-col sm:flex-row items-center sm:space-x-6 space-y-4 sm:space-y-0 hover:shadow-xl hover:-translate-y-1 transform transition duration-300">
+      <img src="imagens/???" class="w-32 h-32 object-cover rounded-lg" loading="lazy">
+      <div>
+        <h3 class="text-xl font-light">CAROLINA RODRIGUES</h3>
+        <p class="text-[#445525] font-medium">LEEC IST-ID 109562</p>
+        <p class="text-gray-600">3rd Year Electrical and Computer Engineering</p>
+        <div class="mt-3">
+          <a href="mailto:carolinarodrigues@hotmail.com" target="_blank" class="inline-block text-[#445525] border border-[#445525] px-4 py-2 rounded-full hover:bg-[#445525] hover:text-white transition">
+            <i class="fas fa-envelope"></i>
+            <span>Email</span>
+          </a>
+          <a href="www.linkedin.com/in/carolina-rodrigues-4b5a45281" target="_blank" class="inline-block text-[#445525] border border-[#445525] px-4 py-2 rounded-full hover:bg-[#445525] hover:text-white transition">
+            <i class="fab fa-linkedin"></i>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bárbara Trigueirão -->
+    <div class="card bg-white rounded-lg shadow-lg p-6 flex flex-col sm:flex-row items-center sm:space-x-6 space-y-4 sm:space-y-0 hover:shadow-xl hover:-translate-y-1 transform transition duration-300">
+      <img src="imagens/\??" class="w-32 h-32 object-cover rounded-lg" loading="lazy">
+      <div>
+        <h3 class="text-xl font-light">BÁRBARA TRIGUEIRÃO</h3>
+        <p class="text-[#445525] font-medium">LEEC IST-ID 109590</p>
+        <p class="text-gray-600">3rd Year Electrical and Computer Engineering</p>
+        <div class="mt-3">
+          <a href="mailto:barbara.trigueirao@tecnico.ulisboa.pt" target="_blank" class="inline-block text-[#445525] border border-[#445525] px-4 py-2 rounded-full hover:bg-[#445525] hover:text-white transition">
+            <i class="fas fa-envelope"></i>
+            <span>Email</span>
+          </a>
+        <a href=" www.linkedin.com/in/bárbara-trigueirão-6b8001325" target="_blank" class="inline-block text-[#445525] border border-[#445525] px-4 py-2 rounded-full hover:bg-[#445525] hover:text-white transition">
+          <i class="fab fa-linkedin"></i>
+          <span>LinkedIn</span>
+        </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Marco Mendonça -->
+    <div class="card bg-white rounded-lg shadow-lg p-6 flex flex-col sm:flex-row items-center sm:space-x-6 space-y-4 sm:space-y-0 hover:shadow-xl hover:-translate-y-1 transform transition duration-300">
+      <img src="imagens/eva.jpeg" class="w-32 h-32 object-cover rounded-lg" loading="lazy">
+      <div>
+        <h3 class="text-xl font-light">MARCO MENDONÇA</h3>
+        <p class="text-[#445525] font-medium">LEEC IST-ID 109977</p>
+        <p class="text-gray-600">3rd Year Electrical and Computer Engineering</p>
+        <div class="mt-3 space-x-2">
+          <a href="mailto:marco.mendonca@tecnico.ulisboa.pt" target="_blank" class="inline-block text-[#445525] border border-[#445525] px-4 py-2 rounded-full hover:bg-[#445525] hover:text-white transition">
+            <i class="fas fa-envelope"></i>
+            <span>Email</span>
+          </a>
+          <a href="?????" target="_blank" class="inline-block text-[#445525] border border-[#445525] px-4 py-2 rounded-full hover:bg-[#445525] hover:text-white transition">
+            <i class="fab fa-linkedin"></i>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gonçalo Caetano -->
+    <div class="card bg-white rounded-lg shadow-lg p-6 flex flex-col sm:flex-row items-center sm:space-x-6 space-y-4 sm:space-y-0 hover:shadow-xl hover:-translate-y-1 transform transition duration-300">
+      <img src="imagens/costa.jpeg" class="w-32 h-32 object-cover rounded-lg" loading="lazy">
+      <div>
+        <h3 class="text-xl font-light">GONÇALO CAETANO</h3>
+        <p class="text-[#445525] font-medium">LEEC IST-ID 109925</p>
+        <p class="text-gray-600">3rd Year Electrical and Computer Engineering</p>
+        <div class="mt-3 space-x-2">
+          <a href="mailto:???" target="_blank" class="inline-block text-[#445525] border border-[#445525] px-4 py-2 rounded-full hover:bg-[#445525] hover:text-white transition">
+            <i class="fas fa-envelope"></i>
+            <span>Email</span>
+          </a>
+          <a href="????" target="_blank" class="inline-block text-[#445525] border border-[#445525] px-4 py-2 rounded-full hover:bg-[#445525] hover:text-white transition">
+            <i class="fab fa-linkedin"></i>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Diogo Vicente -->
+    <div class="card bg-white rounded-lg shadow-lg p-6 flex flex-col sm:flex-row items-center sm:space-x-6 space-y-4 sm:space-y-0 hover:shadow-xl hover:-translate-y-1 transform transition duration-300">
+      <img src="imagens/joana.jpeg" class="w-32 h-32 object-cover rounded-lg" loading="lazy">
+      <div>
+        <h3 class="text-xl font-light">DIOGO VICENTE</h3>
+        <p class="text-[#445525] font-medium">LEEC IST-ID 107511</p>
+        <p class="text-gray-600">3rd Year Electrical and Computer Engineering</p>
+        <div class="mt-3 space-x-2">
+          <a href="mailto:?????" target="_blank" class="inline-block text-[#445525] border border-[#445525] px-4 py-2 rounded-full hover:bg-[#445525] hover:text-white transition">
+            <i class="fas fa-envelope"></i>
+            <span>Email</span>
+          </a>
+          <a href="?????" target="_blank" class="inline-block text-[#445525] border border-[#445525] px-4 py-2 rounded-full hover:bg-[#445525] hover:text-white transition">
+            <i class="fab fa-linkedin"></i>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Salvador Carvalho -->
+    <div class="card bg-white rounded-lg shadow-lg p-6 flex flex-col sm:flex-row items-center sm:space-x-6 space-y-4 sm:space-y-0 hover:shadow-xl hover:-translate-y-1 transform transition duration-300">
+      <img src="imagens/matias.jpeg" class="w-32 h-32 object-cover rounded-lg" loading="lazy">
+      <div>
+        <h3 class="text-xl font-light">SALVADOR CARVALHO</h3>
+        <p class="text-[#445525] font-medium">LEEC IST-ID 109394</p>
+        <p class="text-gray-600">3rd Year Electrical and Computer Engineering</p>
+        <div class="mt-3">
+          <a href="mailto:????" target="_blank" class="inline-block text-[#445525] border border-[#445525] px-4 py-2 rounded-full hover:bg-[#445525] hover:text-white transition">
+            <i class="fas fa-envelope"></i>
+            <span>Email</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Secção: Blog e DOCUMENTOS (Carousel) -->
+
+<section id="blog" class="mb-16">
+  <h2 class="text-4xl font-light mb-8 text-center" style="text-shadow:-2px -2px 2px #445525">BLOG</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+  
+  <!-- Semana 1 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer" onclick="openModal('week1')">
+  <img src="imagens/week1.png" alt="Week 1" class="w-full h-48 object-cover">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold mb-2">WEEK 1</h3>
+    <p class="text-sm text-gray-600">15/02/2026 – 22/02/2026</p>
+    <p class="mt-2 text-gray-700 text-sm">????</p>
+  </div>
+</div>
+
+<!-- Semana 2 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer" onclick="openModal('week2')">
+  <img src="imagens/week2.jpg" alt="Week 2" class="w-full h-48 object-cover">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold mb-2">WEEK 2</h3>
+    <p class="text-sm text-gray-600">22/02/2026 – 01/03/2026</p>
+    <p class="mt-2 text-gray-700 text-sm">???</p>
+  </div>
+</div>
+
+<!-- Semana 3 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer" onclick="openModal('week3')">
+  <img src="imagens/w3.jpeg" alt="Week 3" class="w-full h-48 object-cover">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold mb-2">WEEK 3</h3>
+    <p class="text-sm text-gray-600">01/03/2026 – 08/03/2026</p>
+    <p class="mt-2 text-gray-700 text-sm">???</p>
+  </div>
+</div>
+
+<!-- Semana 4 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer" onclick="openModal('week4')">
+  <img src="imagens/w4.jpeg" alt="Week 4" class="w-full h-48 object-cover">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold mb-2">WEEK 4</h3>
+    <p class="text-sm text-gray-600">08/03/2026 – 15/03/2026</p>
+    <p class="mt-2 text-gray-700 text-sm">???</p>
+  </div>
+</div>
+
+<!-- Semana 5 & 6 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer" onclick="openModal('week5')">
+  <img src="imagens/w5.jpeg" alt="Week 5 & 6" class="w-full h-48 object-cover">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold mb-2">WEEK 5 & 6</h3>
+    <p class="text-sm text-gray-600">15/03/2026 – 22/03/2026</p>
+    <p class="mt-2 text-gray-700 text-sm">???</p>
+  </div>
+</div>
+
+<!-- Semana 7 & 8 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer" onclick="openModal('week6')">
+  <img src="imagens/w7.jpeg" alt="Week 7 & 8" class="w-full h-48 object-cover">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold mb-2">WEEK 7 & 8</h3>
+    <p class="text-sm text-gray-600">29/03/2026 – 12/04/2026</p>
+    <p class="mt-2 text-gray-700 text-sm">Exams Week</p>
+  </div>
+</div>
+
+<!-- Semana 9 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer" onclick="openModal('week7')">
+  <img src="imagens/w9.jpeg" alt="Week 9" class="w-full h-48 object-cover">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold mb-2">WEEK 9</h3>
+    <p class="text-sm text-gray-600">12/04/2026 – 19/04/2026</p>
+    <p class="mt-2 text-gray-700 text-sm">???</p>
+  </div>
+</div>
+
+<!-- Semana 10 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer" onclick="openModal('week8')">
+  <img src="imagens/w10.jpeg" alt="Week 10" class="w-full h-48 object-cover">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold mb-2">WEEK 10</h3>
+    <p class="text-sm text-gray-600">19/04/2026 – 26/04/2026</p>
+    <p class="mt-2 text-gray-700 text-sm">????</p>
+  </div>
+</div>
+
+<!-- Semana 11 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer" onclick="openModal('week9')">
+  <img src="imagens/w11.jpeg" alt="Week 11" class="w-full h-48 object-cover">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold mb-2">WEEK 11</h3>
+    <p class="text-sm text-gray-600">26/04/2026 – 19/05/2025</p>
+    <p class="mt-2 text-gray-700 text-sm">???</p>
+  </div>
+</div>
+
+<!-- Semana 12 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer" onclick="openModal('week10')">
+  <img src="imagens/w12.jpeg" alt="Week 12" class="w-full h-48 object-cover">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold mb-2">WEEK 12</h3>
+    <p class="text-sm text-gray-600">19/05/2025 – 26/05/2025</p>
+    <p class="mt-2 text-gray-700 text-sm">??</p>
+  </div>
+</div>
+
+<!-- Semana 13 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer" onclick="openModal('week11')">
+  <img src="imagens/w13.jpeg" alt="Week 13" class="w-full h-48 object-cover">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold mb-2">WEEK 13</h3>
+    <p class="text-sm text-gray-600">26/05/2025 – 02/06/2025</p>
+    <p class="mt-2 text-gray-700 text-sm">???.</p>
+  </div>
+</div>
+
+<!-- Semana 14 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer" onclick="openModal('week12')">
+  <img src="imagens/w14.jpeg" alt="Week 14" class="w-full h-48 object-cover">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold mb-2">WEEK 14</h3>
+    <p class="text-sm text-gray-600">02/06/2025 – 09/06/2025</p>
+    <p class="mt-2 text-gray-700 text-sm">???</p>
+  </div>
+</div>
+
+<!-- Semana 15 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer" onclick="openModal('week13')">
+  <img src="imagens/w15.jpeg" alt="Week 15" class="w-full h-48 object-cover">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold mb-2">WEEK 15</h3>
+    <p class="text-sm text-gray-600">09/06/2025 – 16/06/2025</p>
+    <p class="mt-2 text-gray-700 text-sm">???.</p>
+  </div>
+</div>
+
+<!-- Final Touches -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer" onclick="openModal('week13')">
+  <img src="imagens/w16.jpeg" alt="Week 15" class="w-full h-48 object-cover">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold mb-2">Almost there</h3>
+    <p class="text-sm text-gray-600">ElectroDay ??July2026</p>
+    <p class="mt-2 text-gray-700 text-sm"></p>
+  </div>
+</div>
+
+
+</div>
+
+
+
+  <!-- Modais completos -->
+<!-- Modal Week 1 -->
+<div id="modal-week1" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+  <div class="bg-[#445525] text-white rounded-lg max-w-lg w-full p-6 relative">
+    <button onclick="closeModal('week1')" class="absolute top-2 right-2 text-white text-3xl leading-none">&times;</button>
+    <h3 class="text-2xl font-light mb-2">WEEK 1</h3>
+    <h2 class="text-xl font-light mb-4">23/02/2025 – 02/03/2025</h2>
+    <p class="text-sm">This week, we established key partnerships to support the development of our project. We engaged with the Portuguese Air Force Academy and connected with experienced professionals who will provide critical guidance: CAP PA Sara Carvalho will assist us in conducting field tests. SAJ PA Paulo Cruz, leveraging his operational experience and connections, is helping us expand our network. He also provided us with the possibility of conducting live-fire tests. CAP ENGEL Anna will support us in key areas such as system architecture, signal processing, and material selection. Interviews Started: We conducted several interviews with combat-experienced individuals to better understand the necessary features for our device. We learned that detecting the direction of a gunshot is difficult in noisy environments, and the recommended solution was to use a microphone array with machine learning for sound classification.</p>
+  </div>
+</div>
+
+<!-- Modal Week 2 -->
+<div id="modal-week2" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+  <div class="bg-[#445525] text-white rounded-lg max-w-lg w-full p-6 relative">
+    <button onclick="closeModal('week2')" class="absolute top-2 right-2 text-white text-3xl leading-none">&times;</button>
+    <h3 class="text-2xl font-light mb-2">WEEK 2</h3>
+    <h2 class="text-xl font-light mb-4">02/03/2025 – 09/03/2025</h2>
+    <p class="text-sm">By the end of the week, we launched the website to the public. We began outlining the structure and approach for developing the project's architecture. We met with Prof. Luís Caldas, discussed the project organization and received positive feedback on the website and teamwork strategy.</p>
+  </div>
+</div>
+
+<!-- Modal Week 3 -->
+<div id="modal-week3" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+  <div class="bg-[#445525] text-white rounded-lg max-w-lg w-full p-6 relative">
+    <button onclick="closeModal('week3')" class="absolute top-2 right-2 text-white text-3xl leading-none">&times;</button>
+    <h3 class="text-2xl font-light mb-2">WEEK 3</h3>
+    <h2 class="text-xl font-light mb-4">10/03/2025 – 17/03/2025</h2>
+    <p class="text-sm">We started researching which microphones could be used, focusing on MEMS microphones based on Prof. Luís Caldas' suggestion. We presented the project to Officer X, who provided positive feedback and suggestions for civilian applications and test locations.</p>
+  </div>
+</div>
+
+
+  <!-- Modal Week 4 -->
+<div id="modal-week4" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+  <div class="bg-[#445525] text-white rounded-lg max-w-lg w-full p-6 relative">
+    <button onclick="closeModal('week4')" class="absolute top-2 right-2 text-white text-3xl leading-none">&times;</button>
+    <h3 class="text-2xl font-light mb-2">WEEK 4</h3>
+    <h2 class="text-xl font-light mb-4">17/03/2025 – 24/03/2025</h2>
+    <p class="text-sm">We discussed hardware, software, and system architecture fundamentals with Prof. João Pedro Gomes, gaining a broader understanding of implementation strategies. Team division: Hardware Development – Rui Martins & Francisco Costa; Software Development – Francisco Saramago & Miguel Matias; User Interface – Eva Oliveira & Joana Rodrigues.</p>
+  </div>
+</div>
+
+<!-- Modal Week 5 -->
+<div id="modal-week5" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+  <div class="bg-[#445525] text-white rounded-lg max-w-lg w-full p-6 relative">
+    <button onclick="closeModal('week5')" class="absolute top-2 right-2 text-white text-3xl leading-none">&times;</button>
+    <h3 class="text-2xl font-light mb-2">WEEK 5 & 6</h3>
+    <h2 class="text-xl font-light mb-4">24/03/2025 – 07/04/2025</h2>
+    <p class="text-sm">We focused on selecting the best materials and finalized the list for the project.</p>
+  </div>
+</div>
+
+
+<!-- Modal Week 6 -->
+<div id="modal-week6" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+  <div class="bg-[#445525] text-white rounded-lg max-w-lg w-full p-6 relative">
+    <button onclick="closeModal('week6')" class="absolute top-2 right-2 text-white text-3xl leading-none">&times;</button>
+    <h3 class="text-2xl font-light mb-2">WEEK 7 & 8</h3>
+    <h2 class="text-xl font-light mb-4">07/04/2025 – 21/04/2025</h2>
+    <p class="text-sm">During these two weeks, the focus shifted towards studying and completing the third-quarter exams.</p>
+  </div>
+</div>
+
+
+
+<!-- Modal Week 7 -->
+<div id="modal-week7" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+  <div class="bg-[#445525] text-white rounded-lg max-w-lg w-full p-6 relative">
+    <button onclick="closeModal('week7')" class="absolute top-2 right-2 text-white text-3xl leading-none">&times;</button>
+    <h3 class="text-2xl font-light mb-2">WEEK 9</h3>
+    <h2 class="text-xl font-light mb-4">28/04/2025 – 05/05/2025</h2>
+    <p class="text-sm">With the start of the period and the reception of the necessary materials, the code development phase began. This stage involved analyzing the best implementation options for the project requirements. At the same time, the basic system structure was defined, including the communication architecture between devices and the final functional goals of the prototype. This preparatory phase was essential to ensure coherence and scalability throughout development. The technical specifications of the selected components were thoroughly reviewed, particularly the ESP32-S2 Solo2U and Raspberry Pi Pico 2W capabilities, along with the I2S microphone compatibility for real-time audio sampling. The hardware configuration was established to support the microphone array distributed across the ESP32 modules for omnidirectional detection. Key technical challenges were identified, including temporal correlation between the microphones for accurate sound direction calculation, sensor calibration for detecting sound levels and the implementation of signal processing algorithms. The development methodology included creating independent code modules for each subsystem (I2S capture, correlation processing, WiFi communication, and TFT display interface), allowing for isolated testing and progressive integration.</p>
+  </div>
+</div>
+
+<!-- Modal Week 8 -->
+<div id="modal-week8" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+  <div class="bg-[#445525] text-white rounded-lg max-w-lg w-full p-6 relative">
+    <button onclick="closeModal('week8')" class="absolute top-2 right-2 text-white text-3xl leading-none">&times;</button>
+    <h3 class="text-2xl font-light mb-2">WEEK 10</h3>
+    <h2 class="text-xl font-light mb-4">05/05/2025 – 12/05/2025</h2>
+    <p class="text-sm">This week marked the beginning of assembling the first physical prototype, aiming to conduct initial lab tests. The base code, responsible for communication between ESP modules and data processing, was completed. Integration between hardware and software was validated in a controlled environment, ensuring the system was functional and ready for preliminary testing. The prototype assembly involved mounting the ESP32-S2 modules with their respective I2S microphone pairs, establishing the WiFi network infrastructure for inter-device communication, and configuring the Raspberry Pi Pico 2W with the TFT display for real-time data visualization. Initial testing focused on verifying the I2S audio capture functionality across all microphones, with successful validation of 44.1 kHz sampling rates and 16-bit audio processing. The communication protocol between ESP32 modules and the Pico2W was tested using mock data to ensure reliable WiFi transmission of angle and decibel measurements. Laboratory tests confirmed proper synchronization between microphone arrays, with the correlation algorithms successfully calculating relative time delays for directional estimation. Basic calibration procedures were implemented to establish baseline noise levels and validate the dB detection threshold, preparing the system for more comprehensive field testing scenarios.</p>
+  </div>
+</div>
+
+<!-- Modal Week 9 -->
+<div id="modal-week9" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+  <div class="bg-[#445525] text-white rounded-lg max-w-lg w-full p-6 relative">
+    <button onclick="closeModal('week9')" class="absolute top-2 right-2 text-white text-3xl leading-none">&times;</button>
+    <h3 class="text-2xl font-light mb-2">WEEK 11</h3>
+    <h2 class="text-xl font-light mb-4">12/05/2025 – 19/05/2025</h2>
+    <p class="text-sm">With the code finalized, the first lab tests were carried out using only one pair of ESP32 modules. These tests focused on angle measurement accuracy and signal synchronization. The results were promising, showing minimal errors for angles below 45°, but more significant discrepancies above that value. This observation prompted an analysis of possible causes, such as relative positioning limitations or signal interference. The testing methodology involved generating controlled audio signals at known angles to evaluate the system's directional accuracy. Cross-correlation algorithms were validated using synchronized audio samples from both microphones, with time-of-flight calculations showing excellent precision for sound sources within the optimal detection range. The synchronization tests confirmed that both ESP32 modules maintained consistent sampling rates with minimal drift, ensuring reliable temporal correlation between audio channels. Analysis of the angle measurement errors above 45° revealed potential issues with the microphone spacing geometry and acoustic interference patterns. Signal-to-noise ratio measurements indicated adequate sensitivity for gunshot detection, with the system successfully distinguishing between background noise and target audio signatures above the dB threshold.</p>
+  </div>
+</div>
+
+<!-- Modal Week 10 -->
+<div id="modal-week10" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+  <div class="bg-[#445525] text-white rounded-lg max-w-lg w-full p-6 relative">
+    <button onclick="closeModal('week10')" class="absolute top-2 right-2 text-white text-3xl leading-none">&times;</button>
+    <h3 class="text-2xl font-light mb-2">WEEK 12</h3>
+    <h2 class="text-xl font-light mb-4">19/05/2025 – 26/05/2025</h2>
+    <p class="text-sm">Considering the results from the previous week, the system was expanded with the addition of more ESP32 modules to improve angular coverage and data reliability. Special attention was given to electromagnetic noise during tests, and alternative shielding solutions (e.g., absorbent material or enclosures) were studied to reduce external interference and improve measurement consistency. Simulations were conducted to evaluate potential improvements with different sensor configurations and materials. The expansion involved deploying all four ESP32 modules to achieve complete 360-degree coverage, with each module positioned to minimize overlap while maintaining optimal angular resolution.</p>
+  </div>
+</div>
+
+
+<!-- Modal Week 11 -->
+<div id="modal-week11" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+  <div class="bg-[#445525] text-white rounded-lg max-w-lg w-full p-6 relative">
+    <button onclick="closeModal('week11')" class="absolute top-2 right-2 text-white text-3xl leading-none">&times;</button>
+    <h3 class="text-2xl font-light mb-2">WEEK 13</h3>
+    <h2 class="text-xl font-light mb-4">26/05/2025 – 02/06/2025</h2>
+    <p class="text-sm">The week started with follow-up meetings with Professors Luís Caldas and João Gomes, where we presented the latest developments and experimental results. The professors were pleased with the project’s progress and provided valuable suggestions, particularly regarding sensor alignment, data calibration, and system robustness. Based on their recommendations, we defined the next steps, including improving the angle correction algorithm and implementing filters to eliminate noise from the acquired data. With the final date arriving, we used this week to finish building the prototype and ran the most important tests: field tests with real gunshots at the shooting range in 'Academia da Forca Aerea', which we concluded and verified the real world capability of our device with satisfactory and positive results of functioning that validated the true potential and viability of our project.</p>
+  </div>
+</div>
+
+<!-- Modal Week 12 -->
+<div id="modal-week12" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+  <div class="bg-[#445525] text-white rounded-lg max-w-lg w-full p-6 relative">
+    <button onclick="closeModal('week12')" class="absolute top-2 right-2 text-white text-3xl leading-none">&times;</button>
+    <h3 class="text-2xl font-light mb-2">WEEK 14</h3>
+    <h2 class="text-xl font-light mb-4">02/06/2025 – 09/06/2025</h2>
+    <p class="text-sm">This week focused on preparing the system for final integration tests and user demonstration procedures. Calibration routines were reviewed, and the user interface was finalized for optimal field usability.Throughout this week, we conducted the second round of tests at the Air Force Academy. We analyzed the metrics collected, which demonstrated that our project achieved errors below 20% in both laboratory and field tests. Additionally, we prepared the presentation poster for our booth and implemented several improvements to our website.</p>
+  </div>
+</div>
+
+<!-- Modal Week 13 -->
+<div id="modal-week13" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+  <div class="bg-[#445525] text-white rounded-lg max-w-lg w-full p-6 relative">
+    <button onclick="closeModal('week13')" class="absolute top-2 right-2 text-white text-3xl leading-none">&times;</button>
+    <h3 class="text-2xl font-light mb-2">WEEK 15</h3>
+    <h2 class="text-xl font-light mb-4">09/06/2025 – 16/06/2025</h2>
+    <p class="text-sm">During this week, we produced the final presentation video for our project, including footage captured at the academy during testing. We also refined a few details in preparation for the Electroday event. In addition, we carried out a final review of all project documentation to ensure consistency and accuracy across reports, the website, and the poster. We conducted several rehearsals of the project pitch to improve the clarity and timing of our presentation.</p>
+  </div>
+</div>
+
+<!-- Modal Almost There -->
+<div id="modal-week14" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+  <div class="bg-[#445525] text-white rounded-lg max-w-lg w-full p-6 relative">
+    <button onclick="closeModal('week14')" class="absolute top-2 right-2 text-white text-3xl leading-none">&times;</button>
+    <h3 class="text-2xl font-light mb-2">ALMOST THERE</h3>
+    <h2 class="text-xl font-light mb-4">ElectroDay</h2>
+    <p class="text-sm">The long-awaited day to present our project to the public finally arrived. Throughout the day, we had the opportunity to showcase and explain our concept to visitors at our booth, featuring a small interactive game where participants could identify the direction of a “shot.” It was extremely rewarding to present a project that we developed with the utmost dedication, ensuring it could deliver the maximum value and impact to those who experienced it.</p>
+  </div>
+</div>
+
+
+</section>
+
+<script>
+  const wrapper = document.getElementById("carousel-wrapper");
+  const slides = wrapper.children;
+  const totalSlides = slides.length;
+  let index = 0;
+
+  function nextSlide() {
+    index = (index + 1) % totalSlides;
+    wrapper.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  function prevSlide() {
+    index = (index - 1 + totalSlides) % totalSlides;
+    wrapper.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  document.getElementById("next").addEventListener("click", nextSlide);
+  document.getElementById("prev").addEventListener("click", prevSlide);
+
+  // Autoplay a cada 20s
+  setInterval(nextSlide, 7000);
+
+function openModal(weekId) {
+  document.getElementById('modal-' + weekId).classList.remove('hidden');
+}
+
+function closeModal(weekId) {
+  document.getElementById('modal-' + weekId).classList.add('hidden');
+}
+
+</script>
+
+
+   
+<!-- Seção: PARCEIROS -->
+<section id="partners" class="mb-16">
+  <div class="text-center mb-12">
+    <h2 class="text-4xl font-light mb-8 text-center" style="text-shadow:-2px -2px 2px #445525">PARTNERS</h2>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+    <!-- Card 1 -->
+    <div class="card bg-white rounded-xl shadow-xl p-8 transform hover:-translate-y-2 transition duration-300">
+      <div class="flex justify-center mb-4">
+         <img src="imagens/afa.jpg" alt="Projeto Proposta" class="h-20 w-20 mx-auto" loading="lazy"> 
+      </div>
+      <h3 class="text-2xl font-light text-center text-[#445525] mb-2">?????????</h3>
+      <p class="text-gray-600 text-center mb-4">??????????????</p>
+         <div class="flex justify-center space-x-4">
+          <a href="https://www.academiafa.edu.pt/" target="_blank" class="flex items-center justify-center text-[#445525] border border-[#445525] w-10 h-10 rounded-full hover:bg-[#445525] hover:text-white transition">
+            <i class="fas fa-globe"></i> 
+          </a>
+          <a href="https://www.facebook.com/academiaforcaaerea/?locale=pt_PT" target="_blank" class="flex items-center justify-center text-[#445525] border border-[#445525] w-10 h-10 rounded-full hover:bg-[#445525] hover:text-white transition">
+            <i class="fab fa-facebook-f"></i> 
+          </a>
+          <a href="https://www.instagram.com/academiadaforcaaerea?igsh=MTFmenV0aG1ybmd4dA==" target="_blank" class="flex items-center justify-center text-[#445525] border border-[#445525] w-10 h-10 rounded-full hover:bg-[#445525] hover:text-white transition">
+            <i class="fab fa-instagram"></i> 
+          </a>
+        </div>        
+    </div>
+    <!-- Card 2 -->
+    <div class="card bg-white rounded-xl shadow-xl p-8 transform hover:-translate-y-2 transition duration-300">
+      <div class="flex justify-center mb-4">
+         <img src="imagens/IST.png" alt="Apresentação Intermediária" class="h-20 w-16 mx-auto" loading="lazy">
+      </div>
+      <h3 class="text-2xl font-light text-[#445525] text-center mb-2">INSTITUTO SUPERIOR TÉCNICO</h3>
+      <p class="text-gray-600 text-center mb-4">Portugal’s leading engineering school, renowned for its cutting-edge
+         research and innovation in science and technology. IST provides a robust academic environment, equipping students
+          with the knowledge and expertise to tackle real-world challenges in various engineering disciplines. </p>
+          <div class="flex justify-center space-x-4">
+            <a href="https://tecnico.ulisboa.pt/pt/" target="_blank" class="flex items-center justify-center text-[#445525] border border-[#445525] w-10 h-10 rounded-full hover:bg-[#445525] hover:text-white transition">
+              <i class="fas fa-globe"></i> 
+            </a>
+            <a href="https://www.facebook.com/tecnico.ulisboa.pt/?locale=pt_PT" target="_blank" class="flex items-center justify-center text-[#445525] border border-[#445525] w-10 h-10 rounded-full hover:bg-[#445525] hover:text-white transition">
+              <i class="fab fa-facebook-f"></i> 
+            </a>
+            <a href="https://www.instagram.com/tecnico_lisboa?igsh=bTdqcmM0cDY4OHJ4" target="_blank" class="flex items-center justify-center text-[#445525] border border-[#445525] w-10 h-10 rounded-full hover:bg-[#445525] hover:text-white transition">
+              <i class="fab fa-instagram"></i> 
+            </a>
+          </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Seção: Contato -->
+<section id="contacts" class="py-12 bg-gray-100">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl font-light mb-8 text-center" style="text-shadow: -2px -2px 2px #445525">CONTACT US</h2>
+    <div class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Informações de Contato -->
+      <div class="bg-white rounded-lg shadow-lg p-8">
+        <h3 class="text-2xl font-light mb-4 text-[#445525]">Get in Touch</h3>
+        <p class="text-gray-600 mb-4">
+          We’re here to answer any questions you may have. Reach out to us and we’ll respond as soon as possible.
+        </p>
+        <ul class="space-y-4">
+          <li class="flex items-center">
+            <i class="fas fa-envelope text-[#445525] mr-4"></i>
+            <span class="text-gray-700">matibomba565@gmail.com</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-phone text-[#445525] mr-4"></i>
+            <span class="text-gray-700">+351 218 417 222 (AG)</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-map-marker-alt text-[#445525] mr-4"></i>
+            <span class="text-gray-700">Lisbon, Portugal</span>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Formulário de Contato -->
+      <div class="bg-white rounded-lg shadow-lg p-8">
+        <h3 class="text-2xl font-light mb-4 text-[#445525]">Send Us a Message</h3>
+        <form action="#" method="POST" class="space-y-4">
+          <input type="text" name="nome" placeholder="Your name" class="w-full p-3 border border-gray-300 rounded" required>
+          <input type="email" name="email" placeholder="Your email" class="w-full p-3 border border-gray-300 rounded" required>
+          <textarea name="mensagem" placeholder="Message" rows="5" class="w-full p-3 border border-gray-300 rounded" required></textarea>
+          <button type="submit" class="w-full bg-[#445525] text-white p-3 rounded hover:bg-green-900 transition">Send</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Barra Final / Footer -->
+<footer class="bg-[#445525] text-white py-6">
+  <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+    <p class="text-sm">&copy; 2025 ElectroCap.</p>
+    <a href="#" class="hover:text-gray-300">
+        <button onclick="document.documentElement.classList.toggle('dark')" 
+  class="text-sm px-3 py-1 border border-white rounded hover:bg-white hover:text-[#445525] transition">
+  Toggle Dark Mode
+</button>
+    </a>
+    <div class="flex space-x-4 mt-4 md:mt-0">
+      <a href="#" class="hover:text-gray-300">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="#" class="hover:text-gray-300">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="#" class="hover:text-gray-300">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="#" class="hover:text-gray-300">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+<!-- Scripts -->
+<script>
+// Funcionalidade do Carrossel
+const carousel = document.querySelector('#carousel');
+const totalSlides = carousel.children.length;
+let index = 0;
+
+document.getElementById('next').addEventListener('click', () => {
+    index = (index + 1) % totalSlides;
+    carousel.style.transform = `translateX(-${index * 100}%)`;
+});
+
+document.getElementById('prev').addEventListener('click', () => {
+    index = (index - 1 + totalSlides) % totalSlides;
+    carousel.style.transform = `translateX(-${index * 100}%)`;
+});
+</script>
+
+<button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+  class="fixed bottom-6 right-6 bg-[#445525] text-white p-3 rounded-full shadow-lg hover:bg-green-900 z-50">
+  ↑
+</button>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init();</script>
+
+
+</body>
+</html>
